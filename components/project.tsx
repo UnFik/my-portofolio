@@ -38,26 +38,34 @@ const Project = () => {
           technologies: ["next", "tailwind", "vercel"],
         },
         {
-          title: "Kidsera Dashboard",
-          color: "text-blue-600",
-          description:
-            "Kidsera Dashboard is an information system for teachers at kidsera kindegarten which has the function of processing data starting from facilities & infrastructure to every detail of student data packaged with an easy-to-understand user experience and a modern user interface",
-          images: ["sera1.svg"],
-          demoLink: "",
+          title: "PPG UNJ",
+          color: "text-green-500",
+          description: "PPG Documentation & Transcript Application is a web-based application specifically designed to support the documentation and transcript needs of students in the Teacher Professional Education field.",
+          images: ["ppg1.png", "ppg2.png"],
+          demoLink: "http://103.8.12.205/login",
           btnClass: "btn-demo2",
-          technologies: ["ionic", "vue", "bootstrap", "flask"],
+          technologies: ["next", "tailwind", "vercel"],
+        },
+        {
+          title: "SKPI UNJ",
+          color: "text-green-500",
+          description: "SI - SKPI UNJ is an Information System for managing Diploma Supplement Certificates as one of the graduation requirements for students at Jakarta State University",
+          images: ["skpi1.png", "skpi2.png", "skpi3.png"],
+          demoLink: "https://skpi.unj.ac.id/",
+          btnClass: "btn-demo2",
+          technologies: ["next", "tailwind", "vercel"],
         },
       ].map((project, index) => (
         <div
           key={index}
           className={`project${
-            index + 2
+            index
           } px-4 sm:px-8 md:px-16 py-8 sm:py-12 md:py-16 mt-8 sm:mt-12 md:mt-14 space-y-6 sm:space-y-8 md:space-y-12`}
         >
           <div
             className={`font-bold text-4xl sm:text-5xl md:text-6xl ${project.color}`}
           >
-            {project.title}
+            {project.title} {index}
           </div>
           <div className="text-base sm:text-lg md:text-xl leading-relaxed">
             {project.description}
@@ -77,7 +85,7 @@ const Project = () => {
             {project.images.map((image, imgIndex) => (
               <SwiperSlide key={imgIndex}>
                 <Image
-                  src={image}
+                  src={`/overview/${image}`}
                   width={600}
                   height={600}
                   alt={`${project.title} Project`}

@@ -39,7 +39,7 @@ body {
 
 .project1 {
   border-radius: 20px;
-  border-right: 5px solid #000;
+  border: 1px solid #FFF;
   background: linear-gradient(125deg, #201E35 5.97%, rgba(12, 58, 73, 0.00) 163.44%);
 }
 
@@ -50,7 +50,7 @@ background: linear-gradient(125deg, #201E35 5.97%, rgba(56, 182, 255, 0.80) 163.
 backdrop-filter: blur(21px);
 }
 
-.project3 {
+.project0 {
   border-radius: 16px;
 border: 1px solid #FFF;
 background: linear-gradient(125deg, #201E35 5.97%, #C5A32B 163.44%);
