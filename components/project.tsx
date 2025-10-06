@@ -65,7 +65,7 @@ const Project = () => {
           <div
             className={`font-bold text-4xl sm:text-5xl md:text-6xl ${project.color}`}
           >
-            {project.title} {index}
+            {project.title}
           </div>
           <div className="text-base sm:text-lg md:text-xl leading-relaxed">
             {project.description}
