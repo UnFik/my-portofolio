@@ -6,153 +6,158 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { FreeMode, Pagination } from "swiper/modules";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
+
+const projects = [
+  {
+    title: "SAKU TAGIHAN PTNBH",
+    description: "Information System for managing billing and payment at Universitas State of Jakarta.",
+    images: ["saku1.png", "saku2.png"],
+    demoLink: "https://saku.ptnbh.ac.id/",
+    technologies: ["react", "tailwind", "elysia", "drizzle", "postgres"],
+    color: "from-green-500/20 to-emerald-500/5",
+  },
+  {
+    title: "SKPI UNJ",
+    description: "Information System for managing Diploma Supplement Certificates as one of the graduation requirements.",
+    images: ["skpi1.png", "skpi2.png", "skpi3.png"],
+    demoLink: "https://skpi.unj.ac.id/",
+    technologies: ["next", "tailwind", "drizzle", "postgres", "elysia"],
+    color: "from-blue-500/20 to-cyan-500/5",
+  },
+  {
+    title: "PPG UNJ",
+    description: "Web-based application specifically designed to support the documentation and transcript needs of students.",
+    images: ["ppg1.png", "ppg2.png"],
+    demoLink: "http://103.8.12.205/login",
+    technologies: ["next", "tailwind", "trpc", "drizzle", "postgres"],
+    color: "from-purple-500/20 to-violet-500/5",
+  },
+  {
+    title: "SSW Company Profile",
+    description: "Comprehensive online platform designed to provide a clear and detailed insight into the community.",
+    images: ["ssw1.svg", "ssw2.svg", "ssw3.svg"],
+    demoLink: "https://ssw-web.fikriilhamarifin27.workers.dev/",
+    technologies: ["next", "tailwind", "vercel"],
+    color: "from-yellow-500/20 to-orange-500/5",
+  },
+];
 
 const Project = () => {
   return (
-    <div
-      id="project"
-      className="px-4 sm:px-8 md:px-16 lg:px-20 mt-16 sm:mt-24 md:mt-32"
-    >
-      <div className="heading flex flex-col sm:flex-row gap-3 sm:gap-5 items-center sm:items-end sm:justify-end mb-8">
-        <Image
-          src="project.svg"
-          width={80}
-          height={80}
-          alt="Project"
-          className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28"
-        />
-        <h1 className="font-bold text-3xl sm:text-4xl md:text-5xl text-center sm:text-left">
-          Highlighted Projects{" "}
-          <span className="text-xl sm:text-2xl block sm:inline">i&apos;ve done</span>
-        </h1>
-      </div>
-      {[
-        {
-          title: "SSW Company Profile",
-          color: "text-yellow-500",
-          description:
-            "Smart Sinergy World (SSW) company profile website is a comprehensive online platform designed to provide a clear and detailed insight into the community. It offers an overview of SSW, explains its business model, showcases seminar activities, and highlights available products",
-          images: ["ssw1.svg", "ssw2.svg", "ssw3.svg"],
-          demoLink: "https://smartsinergyworld.com/",
-          btnClass: "btn-demo3",
-          technologies: ["next", "tailwind", "vercel"],
-        },
-        {
-          title: "PPG UNJ",
-          color: "text-green-500",
-          description: "PPG Documentation & Transcript Application is a web-based application specifically designed to support the documentation and transcript needs of students in the Teacher Professional Education field.",
-          images: ["ppg1.png", "ppg2.png"],
-          demoLink: "http://103.8.12.205/login",
-          btnClass: "btn-demo2",
-          technologies: ["next", "tailwind", "vercel"],
-        },
-        {
-          title: "SKPI UNJ",
-          color: "text-green-500",
-          description: "SI - SKPI UNJ is an Information System for managing Diploma Supplement Certificates as one of the graduation requirements for students at Jakarta State University",
-          images: ["skpi1.png", "skpi2.png", "skpi3.png"],
-          demoLink: "https://skpi.unj.ac.id/",
-          btnClass: "btn-demo2",
-          technologies: ["next", "tailwind", "vercel"],
-        },
-      ].map((project, index) => (
-        <div
-          key={index}
-          className={`project${
-            index
-          } px-4 sm:px-8 md:px-16 py-8 sm:py-12 md:py-16 mt-8 sm:mt-12 md:mt-14 space-y-6 sm:space-y-8 md:space-y-12`}
-        >
-          <div
-            className={`font-bold text-4xl sm:text-5xl md:text-6xl ${project.color}`}
-          >
-            {project.title}
+    <section id="project" className="py-20 relative">
+      <div className="container mx-auto px-4 sm:px-8 lg:px-20">
+        <div className="flex flex-col items-center mb-16 space-y-4 text-center">
+          <div className="p-3 rounded-2xl bg-primary/10 w-fit">
+            <Image
+              src="project.svg"
+              width={40}
+              height={40}
+              alt="Project Icon"
+              className="w-10 h-10"
+            />
           </div>
-          <div className="text-base sm:text-lg md:text-xl leading-relaxed">
-            {project.description}
-          </div>
-          <Swiper
-            slidesPerView={1}
-            spaceBetween={30}
-            freeMode={true}
-            pagination={{ clickable: true }}
-            modules={[FreeMode, Pagination]}
-            breakpoints={{
-              640: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-            }}
-            className="mySwiper"
-          >
-            {project.images.map((image, imgIndex) => (
-              <SwiperSlide key={imgIndex}>
-                <Image
-                  src={`/overview/${image}`}
-                  width={600}
-                  height={600}
-                  alt={`${project.title} Project`}
-                  className="rounded-lg w-full h-auto"
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          <div className="flex flex-col sm:flex-row gap-6 sm:gap-10">
-            <a
-              href={project.demoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`${project.btnClass} flex justify-center items-center gap-4 py-4 sm:py-6 px-6 sm:px-8 w-full sm:w-auto`}
-            >
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold">
-                Live Demo
-              </div>
-              <div className="box-arrow2 p-2 sm:p-3">
-                <Image
-                  src="demo.svg"
-                  width={20}
-                  height={20}
-                  alt="arrow"
-                  className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8"
-                />
-              </div>
-            </a>
-            <div className="flex flex-col">
-              <div className="text-xl sm:text-2xl md:text-3xl text-[#919DC1] font-bold">
-                Source Code & Documentation
-              </div>
-              <div className="flex flex-row items-center gap-2 sm:gap-3">
-                <div className="text-xl sm:text-2xl md:text-3xl text-black font-semibold">
-                  On
-                </div>
-                <Image
-                  src="mygithub.svg"
-                  width={40}
-                  height={40}
-                  alt="Github"
-                  className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
-                />
-                <div className="text-xl sm:text-2xl md:text-3xl text-black font-semibold">
-                  github.com
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="text-xl sm:text-2xl md:text-3xl font-semibold">
-            Featured technologies used
-          </div>
-          <div className="flex flex-wrap gap-4 sm:gap-5 md:gap-7">
-            {project.technologies.map((tech, techIndex) => (
-              <Image
-                key={techIndex}
-                src={`origin/${tech}.svg`}
-                width={60}
-                height={60}
-                alt={tech}
-                className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20"
-              />
-            ))}
-          </div>
+          <h2 className="text-3xl md:text-5xl font-bold">
+            Highlighted <span className="text-primary">Projects</span>
+          </h2>
+          <p className="text-muted-foreground max-w-2xl">
+            A selection of projects I've worked on, ranging from web apps to system integrations.
+          </p>
         </div>
-      ))}
-    </div>
+
+        <div className="space-y-24">
+          {projects.map((project, index) => (
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6 }}
+              key={index}
+              className={cn(
+                "group relative grid lg:grid-cols-2 gap-8 lg:gap-12 items-center p-6 lg:p-10 rounded-3xl border border-white/5",
+                "bg-gradient-to-br backdrop-blur-sm",
+                project.color
+              )}
+            >
+              {/* Content */}
+              <div className="order-2 lg:order-1 space-y-6">
+                <h3 className="text-3xl md:text-4xl font-bold">{project.title}</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  {project.description}
+                </p>
+
+                <div className="space-y-4">
+                  <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                    Technologies
+                  </h4>
+                  <div className="flex flex-wrap gap-3">
+                    {project.technologies.map((tech) => (
+                      <div
+                        key={tech}
+                        className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-sm"
+                      >
+                        <Image
+                          src={`origin/${tech}.svg`}
+                          width={16}
+                          height={16}
+                          alt={tech}
+                          className="w-4 h-4"
+                        />
+                        <span className="capitalize">{tech}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-4 pt-4">
+                  <a
+                    href={project.demoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all"
+                  >
+                    <span>Live Demo</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
+                  </a>
+                  <a
+                    href="#"
+                    className="flex items-center gap-2 px-6 py-3 rounded-full bg-secondary text-secondary-foreground font-semibold hover:bg-secondary/80 transition-all"
+                  >
+                    <Image src="mygithub.svg" width={20} height={20} alt="Github" />
+                    <span>Source Code</span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Slider */}
+              <div className="order-1 lg:order-2 w-full overflow-hidden rounded-2xl shadow-2xl border border-white/10 bg-black/20">
+                <Swiper
+                  slidesPerView={1}
+                  spaceBetween={20}
+                  pagination={{ clickable: true }}
+                  modules={[Pagination]}
+                  className="w-full aspect-video"
+                >
+                  {project.images.map((image, imgIndex) => (
+                    <SwiperSlide key={imgIndex}>
+                      <div className="relative w-full h-full">
+                        <Image
+                          src={`/overview/${image}`}
+                          fill
+                          alt={`${project.title} Screenshot`}
+                          className="object-cover"
+                        />
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 

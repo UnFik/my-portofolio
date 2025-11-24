@@ -1,81 +1,118 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import DotPattern from "./magicui/dot-pattern";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 const Overview = () => {
-  return (
-    <>
-      <div className="relative w-full md:mt-56 mt-24">
-        <DotPattern
-          className={cn(
-            "absolute inset-x-0 top-0 md:h-[calc(100%+300px)] h-[calc(100%+80px)] md:-mt-56 -mt-20",
-            "[mask-image:radial-gradient(900px_circle_at_center,white,transparent)]"
-          )}
-        />
-        <div className="flex flex-col lg:flex-row px-4 sm:px-8 lg:px-20 mt-10 lg:mt-20 relative w-full mb-8 h-full">
-          <div className="lg:-z-5 lg:absolute min-w-full lg:right-4 lg:-top-24 mb-8 lg:mb-0">
-            <Image
-              className="m-auto"
-              src="me.svg"
-              width={473}
-              height={500}
-              alt="Fikri"
-            />
-          </div>
-          <div className="container space-y-6 lg:space-y-10 mb-8 lg:mb-0">
-            <h3 className="opacity-50 text-2xl lg:text-4xl">
-              Front-End Developer
-            </h3>
-            <h1 className="font-bold text-4xl lg:text-6xl pb-4 lg:pb-7 relative">
-              Fikri Ilham Arifin
-            </h1>
-            <div className="border-b-4 lg:border-b-8 border-primary w-1/2"></div>
-            <h3 className="text-xl lg:text-2xl w-full lg:w-50 font-semibold relative z-10">
-              Computer Science Student Who Interest{" "}
-              <br className="hidden lg:block" /> In{" "}
-              <span className="text-primary">Web Development</span> &
-              <span className="text-orange-300"> Cybersecurity</span>
-            </h3>
-          </div>
+  const socialLinks = [
+    { name: "github", url: "https://github.com/YourUsername" },
+    { name: "linkedin", url: "https://linkedin.com/in/YourUsername" },
+    { name: "instagram", url: "https://instagram.com/YourUsername" },
+    { name: "facebook", url: "https://facebook.com/YourUsername" },
+  ];
 
-          <div className="container space-y-6 lg:space-y-10 flex flex-col justify-center">
-            <h3 className="text-primary font-bold text-3xl lg:text-4xl text-center">
-              Let&apos;s Connect
-            </h3>
-            <div className="flex flex-row gap-4 lg:gap-7 mx-auto">
-              {["facebook", "instagram", "linkedin", "github"].map((social) => (
+  const brands = ["upwork", "dribbble", "fiverr"];
+
+  return (
+    <section id="home" className="relative w-full min-h-screen flex flex-col justify-center overflow-hidden pt-20 lg:pt-0">
+      <DotPattern
+        className={cn(
+          "absolute inset-0 h-full w-full opacity-20",
+          "[mask-image:radial-gradient(600px_circle_at_center,white,transparent)]"
+        )}
+      />
+
+      <div className="container mx-auto px-4 sm:px-8 lg:px-20 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+
+        {/* Text Content */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="space-y-6 text-center lg:text-left order-2 lg:order-1"
+        >
+          <h3 className="text-xl md:text-2xl font-medium text-primary tracking-wide">
+            Front-End Developer
+          </h3>
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight">
+            Fikri Ilham <br />
+            <span className="text-gradient">Arifin</span>
+          </h1>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-lg mx-auto lg:mx-0 leading-relaxed">
+            Computer Science Student passionate about <span className="text-foreground font-semibold">Web Development</span> & <span className="text-foreground font-semibold">Cybersecurity</span>.
+            Building digital experiences that matter.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+            <a href="#contact" className="px-8 py-3 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/25">
+              Let's Connect
+            </a>
+            <div className="flex items-center gap-4 justify-center">
+              {socialLinks.map((social) => (
                 <a
-                  key={social}
-                  href={`https://www.${social}.com/YourUsername`}
+                  key={social.name}
+                  href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:scale-110 transform duration-300"
+                  className="p-3 rounded-full bg-secondary/50 hover:bg-secondary transition-colors border border-white/5"
                 >
                   <Image
-                    src={`${social}.svg`}
-                    width={40}
-                    height={40}
-                    alt={social}
+                    src={`${social.name}.svg`}
+                    width={20}
+                    height={20}
+                    alt={social.name}
+                    className="w-5 h-5 invert dark:invert-0"
                   />
                 </a>
               ))}
             </div>
           </div>
+        </motion.div>
+
+        {/* Hero Image */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative order-1 lg:order-2 flex justify-center"
+        >
+          <div className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px]">
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-purple-500/20 rounded-full blur-3xl animate-pulse" />
+            <Image
+              src="me.svg"
+              fill
+              className="object-contain drop-shadow-2xl"
+              alt="Fikri"
+              priority
+            />
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Brands / Trusted By */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="w-full mt-16 lg:mt-24 py-8 glass-dark border-y border-white/5"
+      >
+        <div className="container mx-auto flex flex-wrap justify-center gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+          {brands.map((brand) => (
+            <div key={brand} className="relative h-8 w-32">
+              <Image
+                src={`${brand}.svg`}
+                fill
+                className="object-contain"
+                alt={brand}
+              />
+            </div>
+          ))}
         </div>
-      </div>
-      <div className="jumbotron relative py-6 lg:py-10 flex flex-wrap justify-center gap-4 lg:gap-20">
-        {["upwork", "dribbble", "fiverr"].map((brand) => (
-          <Image
-            key={brand}
-            src={`${brand}.svg`}
-            width={200}
-            height={60}
-            alt={brand}
-          />
-        ))}
-      </div>
-    </>
+      </motion.div>
+    </section>
   );
 };
 

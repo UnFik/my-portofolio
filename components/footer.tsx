@@ -1,80 +1,79 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <div id="footer" className="bg-black mt-10 sm:mt-16 md:mt-20">
-      <div className="px-4 sm:px-8 md:px-16 lg:px-20 py-8 sm:py-10 md:py-14 space-y-8 sm:space-y-10 md:space-y-12">
-        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-5">
-          <Image
-            src="handshake.svg"
-            width={100}
-            height={100}
-            alt="Contact Icon"
-            className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28"
-          />
-          <div className="text-3xl sm:text-4xl md:text-5xl text-contact font-bold text-center sm:text-left sm:my-auto">
-            Let&apos;s get in touch
-          </div>
-        </div>
-        <div className="text-xl sm:text-2xl md:text-3xl font-semibold leading-relaxed text-center sm:text-left">
-          You know that feeling you get when you conquer a challenging concept
-          or master a new skill? That&apos;s what drives me
-        </div>
-        <div className="text-xl sm:text-2xl md:text-3xl font-semibold leading-relaxed text-center sm:text-left">
-          Let&apos;s embark on a journey together, where learning knows no bounds and
-          possibilities are endless.
-        </div>
-        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8 sm:gap-12 md:gap-20">
-          <Image
-            src="memoji.svg"
-            width={180}
-            height={180}
-            alt="Contact Icon"
-            className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48"
-          />
-          <div className="flex flex-col space-y-4 sm:space-y-6 md:space-y-7">
-            <div className="text-2xl sm:text-3xl md:text-4xl font-semibold text-center sm:text-left">
-              Contact me via
+    <footer id="contact" className="py-20 relative overflow-hidden">
+      {/* Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent z-0" />
+
+      <div className="container mx-auto px-4 sm:px-8 lg:px-20 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="glass-dark rounded-3xl p-8 md:p-16 border border-white/5 flex flex-col md:flex-row items-center justify-between gap-12"
+        >
+          <div className="space-y-8 max-w-2xl text-center md:text-left">
+            <div className="space-y-4">
+              <h2 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/60">
+                Let's work together
+              </h2>
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                Have a project in mind or just want to say hi? I'm always open to new opportunities and interesting conversations.
+              </p>
             </div>
-            <a
-              href="mailto:fikriilhamarifin27@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-4 sm:gap-6 md:gap-8"
-            >
-              <Image
-                src="gmail.svg"
-                width={30}
-                height={30}
-                alt="Gmail Icon"
-                className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10"
-              />
-              <div className="text-lg sm:text-xl md:text-2xl">
-                fikriilhamarifin27@gmail.com
-              </div>
-            </a>
-            <a
-              href="https://www.linkedin.com/in/fikri-ilham-arifin-27e/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-4 sm:gap-6 md:gap-8"
-            >
-              <Image
-                src="in.svg"
-                width={30}
-                height={30}
-                alt="LinkedIn Icon"
-                className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10"
-              />
-              <div className="text-lg sm:text-xl md:text-2xl">
-                Fikri Ilham Arifin
-              </div>
-            </a>
+
+            <div className="flex flex-col gap-4">
+              <a
+                href="mailto:fikriilhamarifin27@gmail.com"
+                className="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors group"
+              >
+                <div className="p-3 rounded-full bg-primary/20 text-primary group-hover:scale-110 transition-transform">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
+                </div>
+                <div className="text-left">
+                  <div className="text-sm text-muted-foreground">Email me at</div>
+                  <div className="text-lg font-semibold">fikriilhamarifin27@gmail.com</div>
+                </div>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/fikri-ilham-arifin-27e/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors group"
+              >
+                <div className="p-3 rounded-full bg-[#0077b5]/20 text-[#0077b5] group-hover:scale-110 transition-transform">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
+                </div>
+                <div className="text-left">
+                  <div className="text-sm text-muted-foreground">Connect on</div>
+                  <div className="text-lg font-semibold">LinkedIn</div>
+                </div>
+              </a>
+            </div>
           </div>
+
+          <div className="relative w-64 h-64 md:w-80 md:h-80 flex-shrink-0">
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-purple-500/20 rounded-full blur-3xl animate-pulse" />
+            <Image
+              src="memoji.svg"
+              fill
+              alt="Me"
+              className="object-contain drop-shadow-2xl"
+            />
+          </div>
+        </motion.div>
+
+        <div className="mt-12 text-center text-muted-foreground text-sm">
+          <p>© {new Date().getFullYear()} Fikri Ilham Arifin. All rights reserved.</p>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
