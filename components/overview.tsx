@@ -48,7 +48,7 @@ const Overview = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
             <a href="#contact" className="px-8 py-3 rounded-full bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/25">
-              Let's Connect
+              Let&apos;s Connect
             </a>
             <div className="flex items-center gap-4 justify-center">
               {socialLinks.map((social) => (

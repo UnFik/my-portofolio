@@ -62,7 +62,7 @@ const Project = () => {
             Highlighted <span className="text-primary">Projects</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl">
-            A selection of projects I've worked on, ranging from web apps to system integrations.
+            A selection of projects I&apos;ve worked on, ranging from web apps to system integrations.
           </p>
         </div>
 

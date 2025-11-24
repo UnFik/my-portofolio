@@ -20,10 +20,10 @@ const Footer = () => {
           <div className="space-y-8 max-w-2xl text-center md:text-left">
             <div className="space-y-4">
               <h2 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/60">
-                Let's work together
+                Let&apos;s work together
               </h2>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                Have a project in mind or just want to say hi? I'm always open to new opportunities and interesting conversations.
+                Have a project in mind or just want to say hi? I&apos;m always open to new opportunities and interesting conversations.
               </p>
             </div>
 
