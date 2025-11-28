@@ -23,7 +23,7 @@ const projects = [
     description: "Information System for managing Diploma Supplement Certificates as one of the graduation requirements.",
     images: ["skpi1.png", "skpi2.png", "skpi3.png"],
     demoLink: "https://skpi.unj.ac.id/",
-    technologies: ["next", "tailwind", "drizzle", "postgres", "elysia"],
+    technologies: ["nextjs", "tailwind", "drizzle", "postgres", "elysia"],
     color: "from-blue-500/20 to-cyan-500/5",
   },
   {
@@ -31,7 +31,7 @@ const projects = [
     description: "Web-based application specifically designed to support the documentation and transcript needs of students.",
     images: ["ppg1.png", "ppg2.png"],
     demoLink: "http://103.8.12.205/login",
-    technologies: ["next", "tailwind", "trpc", "drizzle", "postgres"],
+    technologies: ["nextjs", "tailwind", "trpc", "drizzle", "postgres"],
     color: "from-purple-500/20 to-violet-500/5",
   },
   {
@@ -39,7 +39,7 @@ const projects = [
     description: "Comprehensive online platform designed to provide a clear and detailed insight into the community.",
     images: ["ssw1.svg", "ssw2.svg", "ssw3.svg"],
     demoLink: "https://ssw-web.fikriilhamarifin27.workers.dev/",
-    technologies: ["next", "tailwind", "vercel"],
+    technologies: ["nextjs", "tailwind", "vercel"],
     color: "from-yellow-500/20 to-orange-500/5",
   },
 ];
@@ -110,7 +110,7 @@ const Project = () => {
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-4 pt-4">
+                {/* <div className="flex flex-wrap gap-4 pt-4">
                   <a
                     href={project.demoLink}
                     target="_blank"
@@ -127,7 +127,7 @@ const Project = () => {
                     <Image src="mygithub.svg" width={20} height={20} alt="Github" />
                     <span>Source Code</span>
                   </a>
-                </div>
+                </div> */}
               </div>
 
               {/* Slider */}

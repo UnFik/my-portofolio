@@ -21,7 +21,7 @@ const skillCategories: SkillCategory[] = [
       { name: "HTML5", icon: "/origin/html5.svg" },
       { name: "CSS3", icon: "/origin/css.svg" },
       { name: "React", icon: "/origin/react.svg" },
-      { name: "Next.js", icon: "/origin/next.svg" },
+      { name: "Next.js", icon: "/origin/nextjs.svg" },
       { name: "Vue.js", icon: "/origin/vue.svg" },
       { name: "Tailwind CSS", icon: "/origin/tailwind.svg" },
       { name: "Bootstrap", icon: "/origin/bootstrap.svg" },
@@ -33,9 +33,9 @@ const skillCategories: SkillCategory[] = [
     title: "Backend Development",
     skills: [
       { name: "Flask", icon: "/origin/flask.svg" },
+      { name: "Golang", icon: "/origin/go.svg" },
       { name: "Elysia", icon: "/origin/elysia.svg" },
       { name: "tRPC", icon: "/origin/trpc.svg" },
-      { name: "Nginx", icon: "/origin/nginx.svg" },
     ],
   },
   {
@@ -55,6 +55,7 @@ const skillCategories: SkillCategory[] = [
       { name: "Git", icon: "/origin/git.svg" },
       { name: "GitHub", icon: "/origin/github.svg" },
       { name: "Vercel", icon: "/origin/vercel.svg" },
+      { name: "Nginx", icon: "/origin/nginx.svg" },
       { name: "PM2", icon: "/origin/pm2.svg" },
     ],
   },
@@ -77,7 +78,7 @@ const item = {
 
 const Skill = () => {
   return (
-    <section id="skill" className="py-20 relative">
+    <section id="skill" className="py-20 sm:py-0 relative">
       <div className="container mx-auto px-4 sm:px-8 lg:px-20">
         <div className="flex flex-col items-center mb-16 space-y-4 text-center">
           <div className="p-3 rounded-2xl bg-primary/10 w-fit">
@@ -124,12 +125,16 @@ const Skill = () => {
                     className="group flex flex-col items-center justify-center p-6 rounded-xl glass-dark hover:bg-white/5 transition-all duration-300 border border-white/5 hover:border-primary/50"
                   >
                     <div className="relative w-16 h-16 mb-4 transition-transform duration-300 group-hover:scale-110">
-                      <Image
-                        src={skill.icon}
-                        fill
-                        alt={skill.name}
-                        className="object-contain rounded-lg"
-                      />
+                      <div className="bg-[#18243a] rounded-lg w-full h-full flex items-center justify-center p-3">
+                        <div className="relative w-full h-full">
+                          <Image
+                            src={skill.icon}
+                            fill
+                            alt={skill.name}
+                            className="object-contain rounded-lg"
+                          />
+                        </div>
+                      </div>
                     </div>
                     <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground capitalize">
                       {skill.name}

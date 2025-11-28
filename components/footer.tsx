@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Download } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -53,6 +54,20 @@ const Footer = () => {
                 <div className="text-left">
                   <div className="text-sm text-muted-foreground">Connect on</div>
                   <div className="text-lg font-semibold">LinkedIn</div>
+                </div>
+              </a>
+
+              <a
+                href="/file/Fikri Ilham Arifin-CV.pdf"
+                download
+                className="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors group"
+              >
+                <div className="p-3 rounded-full bg-green-500/20 text-green-500 group-hover:scale-110 transition-transform">
+                  <Download size={24} />
+                </div>
+                <div className="text-left">
+                  <div className="text-sm text-muted-foreground">Download</div>
+                  <div className="text-lg font-semibold">My CV</div>
                 </div>
               </a>
             </div>
