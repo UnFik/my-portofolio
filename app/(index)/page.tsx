@@ -4,18 +4,19 @@ import Project from "@/components/project";
 import Footer from "@/components/footer";
 
 import ScrollSpy from "@/components/scroll-spy";
-
 import Experience from "@/components/experience";
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
-      <ScrollSpy />
-      <Overview />
-      <Skill />
-      <Experience />
-      <Project />
-      <Footer />
-    </main>
+    <>
+      <main className="flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
+        <ScrollSpy />
+        <Overview />
+        <Skill />
+        <Experience />
+        <Project />
+        <Footer />
+      </main>
+    </>
   );
 }

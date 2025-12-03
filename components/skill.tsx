@@ -20,12 +20,13 @@ const skillCategories: SkillCategory[] = [
     skills: [
       { name: "HTML5", icon: "/origin/html5.svg" },
       { name: "CSS3", icon: "/origin/css.svg" },
+      { name: "Bootstrap", icon: "/origin/bootstrap.svg" },
+      { name: "Tailwind CSS", icon: "/origin/tailwind.svg" },
+      { name: "Ionic", icon: "/origin/ionic.svg" },
       { name: "React", icon: "/origin/react.svg" },
       { name: "Next.js", icon: "/origin/nextjs.svg" },
+      { name: "Laravel", icon: "/origin/laravel.svg" },
       { name: "Vue.js", icon: "/origin/vue.svg" },
-      { name: "Tailwind CSS", icon: "/origin/tailwind.svg" },
-      { name: "Bootstrap", icon: "/origin/bootstrap.svg" },
-      { name: "Ionic", icon: "/origin/ionic.svg" },
       { name: "TypeScript", icon: "/origin/typescript.png" },
     ],
   },
@@ -33,9 +34,12 @@ const skillCategories: SkillCategory[] = [
     title: "Backend Development",
     skills: [
       { name: "Flask", icon: "/origin/flask.svg" },
+      { name: "Laravel", icon: "/origin/laravel.svg" },
       { name: "Golang", icon: "/origin/go.svg" },
       { name: "Elysia", icon: "/origin/elysia.svg" },
       { name: "tRPC", icon: "/origin/trpc.svg" },
+      { name: "Prisma", icon: "/origin/prisma.svg" },
+      { name: "Drizzle", icon: "/origin/drizzle.svg" },
     ],
   },
   {
@@ -43,20 +47,23 @@ const skillCategories: SkillCategory[] = [
     skills: [
       { name: "PostgreSQL", icon: "/origin/postgres.svg" },
       { name: "MySQL", icon: "/origin/mysql.svg" },
+      { name: "SQLite", icon: "/origin/sqlite.svg" },
       { name: "Redis", icon: "/origin/redis.svg" },
-      { name: "Prisma", icon: "/origin/prisma.svg" },
-      { name: "Drizzle", icon: "/origin/drizzle.svg" },
     ],
   },
   {
     title: "DevOps & Tools",
     skills: [
-      { name: "Docker", icon: "/origin/docker.svg" },
       { name: "Git", icon: "/origin/git.svg" },
       { name: "GitHub", icon: "/origin/github.svg" },
       { name: "Vercel", icon: "/origin/vercel.svg" },
-      { name: "Nginx", icon: "/origin/nginx.svg" },
+      { name: "Docker", icon: "/origin/docker.svg" },
       { name: "PM2", icon: "/origin/pm2.svg" },
+      { name: "Nginx", icon: "/origin/nginx.svg" },
+      { name: "Traefik", icon: "/origin/traefik.svg" },
+      { name: "Pusher", icon: "/origin/pusher.svg" },
+      { name: "Sentry", icon: "/origin/sentry.svg" },
+      { name: "Ansible", icon: "/origin/ansible.svg" },
     ],
   },
 ];
@@ -122,7 +129,7 @@ const Skill = () => {
                   <motion.div
                     variants={item}
                     key={skill.name}
-                    className="group flex flex-col items-center justify-center p-6 rounded-xl glass-dark hover:bg-white/5 transition-all duration-300 border border-white/5 hover:border-primary/50"
+                    className="group flex flex-col items-center justify-center p-4 rounded-xl glass-dark hover:bg-white/5 transition-all duration-300 border border-white/5 hover:border-primary/50"
                   >
                     <div className="relative w-16 h-16 mb-4 transition-transform duration-300 group-hover:scale-110">
                       <div className="bg-[#18243a] rounded-lg w-full h-full flex items-center justify-center p-3">

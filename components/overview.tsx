@@ -12,8 +12,8 @@ import { useState } from "react";
 const Overview = () => {
   const [isCVOpen, setIsCVOpen] = useState(false);
   const socialLinks = [
-    { name: "github", url: "https://github.com/YourUsername" },
-    { name: "linkedin", url: "https://linkedin.com/in/YourUsername" },
+    { name: "github", url: "https://github.com/UnFik" },
+    { name: "linkedin", url: "https://www.linkedin.com/in/fikri-ilham-arifin-27e/" },
     { name: "instagram", url: "https://instagram.com/YourUsername" },
     { name: "facebook", url: "https://facebook.com/YourUsername" },
   ];
@@ -64,7 +64,7 @@ const Overview = () => {
                   className="p-3 rounded-full bg-secondary/50 hover:bg-secondary transition-colors border border-white/5"
                 >
                   <Image
-                    src={`${social.name}.svg`}
+                    src={`/assets/${social.name}.svg`}
                     width={20}
                     height={20}
                     alt={social.name}

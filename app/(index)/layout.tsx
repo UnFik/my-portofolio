@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import "./globals.css";
-import Navbar from "../components/navbar";
+import "@/app/(index)/globals.css";
+import Head from "next/head";
+import Navbar from "@/components/navbar";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -21,6 +22,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="8b031f89-05f1-4c62-946e-dfaeb80a26d7"></script>
+      </Head>
       <body className={poppins.className}>
         <Navbar />
         {children}
