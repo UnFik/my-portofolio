@@ -60,7 +60,7 @@ const Experience = () => {
                 <div className="flex flex-col items-center mb-16 space-y-4 text-center">
                     <div className="p-3 rounded-2xl bg-primary/10 w-fit">
                         <Image
-                            src="/handshake.svg"
+                            src="/assets/handshake.svg"
                             width={40}
                             height={40}
                             alt="Experience Icon"

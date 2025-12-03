@@ -5,7 +5,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { FreeMode, Pagination } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -51,7 +51,7 @@ const Project = () => {
         <div className="flex flex-col items-center mb-16 space-y-4 text-center">
           <div className="p-3 rounded-2xl bg-primary/10 w-fit">
             <Image
-              src="project.svg"
+              src="/assets/project.svg"
               width={40}
               height={40}
               alt="Project Icon"

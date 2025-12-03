@@ -90,7 +90,7 @@ const Skill = () => {
         <div className="flex flex-col items-center mb-16 space-y-4 text-center">
           <div className="p-3 rounded-2xl bg-primary/10 w-fit">
             <Image
-              src="/skill.svg"
+              src="/assets/skill.svg"
               width={40}
               height={40}
               alt="Skill Icon"
