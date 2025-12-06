@@ -22,7 +22,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Script defer src="https://cloud.umami.is/script.js" data-website-id="8b031f89-05f1-4c62-946e-dfaeb80a26d7"></Script>
+      <head>
+        <Script defer src="https://cloud.umami.is/script.js" data-website-id="8b031f89-05f1-4c62-946e-dfaeb80a26d7"></Script>
+      </head>
       <body className={poppins.className}>
         <Navbar />
         {children}
