@@ -24,7 +24,7 @@ export default function RootLayout({
       <head>
         <script defer src="https://cloud.umami.is/script.js" data-website-id="8b031f89-05f1-4c62-946e-dfaeb80a26d7"></script>
       </head>
-      <body className={poppins.className}>
+      <body className={poppins.className} suppressHydrationWarning>
         <Navbar />
         {children}
       </body>

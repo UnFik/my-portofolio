@@ -5,6 +5,7 @@ import {
 import { SerializedEditorState } from '@payloadcms/richtext-lexical/lexical'
 import { cn } from '@/lib/utils'
 import { slugify } from '@/lib/string-utils'
+import { YouTubeEmbedComponent } from '@/blocks/youtubeEmbed'
 
 type Props = {
     content: SerializedEditorState
@@ -49,6 +50,12 @@ const jsxConverters: JSXConvertersFunction = ({ defaultConverters }) => ({
                 <code>{nodesToJSX({ nodes: node.children })}</code>
             </pre>
         )
+    },
+    blocks: ({ node }: { node: { fields?: { blockType?: string; url?: string } } }) => {
+        if (node.fields?.blockType === 'youtubeEmbed') {
+            return <YouTubeEmbedComponent data={{ url: node.fields.url || '' }} />
+        }
+        return null
     }
 })
 
